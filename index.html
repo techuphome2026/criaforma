@@ -4,25 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cria-Forma | Casas Modulares</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark: #1A1A1A;
-    --dark-2: #232323;
+    --black: #0D0D0D;
+    --black-2: #151515;
     --orange: #E8892B;
-    --grey-40: #999999;
-    --grey-60: #666666;
+    --grey: #888888;
+    --grey-light: #A0A0A0;
     --white: #FFFFFF;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--dark);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--black);
     color: var(--white);
   }
 
   a { text-decoration: none; color: inherit; }
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
 
   .banner-strip { width: 100%; display: block; line-height: 0; }
   .banner-strip img { width: 100%; height: auto; display: block; }
@@ -32,118 +40,192 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 60px;
+    padding: 24px 80px;
   }
-  .logo img { height: 40px; }
-  nav ul { display: flex; gap: 40px; list-style: none; }
-  nav a { font-size: 14px; font-weight: 500; color: var(--white); opacity: 0.9; }
-  nav a:hover { opacity: 1; }
+
+  .logo img { height: 44px; }
+
+  nav ul { display: flex; align-items: center; gap: 8px; list-style: none; }
+
+  nav a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--grey-light);
+    padding: 8px 16px;
+  }
+
+  nav li.active a {
+    color: var(--white);
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 6px;
+  }
+
   .btn-contact {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px 22px;
-    border-radius: 4px;
+    border: 1px solid #444;
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 0;
     font-size: 14px;
   }
 
-  /* ---------- HERO ---------- */
-  .hero { position: relative; padding: 40px 60px 80px; overflow: hidden; }
-
-  .abstract-bg {
-    position: absolute;
-    top: -100px;
-    right: -150px;
-    width: 900px;
-    opacity: 0.35;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .hero-inner {
-    position: relative;
-    z-index: 1;
+  /* ---------- HERO (split background) ---------- */
+  .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .hero-text { position: relative; }
-
-  .hero-text h1 { font-size: 48px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; }
-  .hero-text p { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 420px; margin-bottom: 30px; line-height: 1.5; }
-
-  .hero-ctas { display: flex; gap: 16px; margin-bottom: 40px; }
-
-  .btn-outline { border: 1px solid rgba(255,255,255,0.4); padding: 14px 28px; border-radius: 4px; font-size: 14px; font-weight: 600; }
-  .btn-primary { background: var(--orange); color: var(--white); padding: 14px 28px; border-radius: 4px; font-size: 14px; font-weight: 700; }
-
-  .hero-stats { display: flex; gap: 16px; }
-  .stat { background: rgba(255,255,255,0.06); border-radius: 6px; padding: 16px 22px; min-width: 110px; }
-  .stat .num { font-size: 26px; font-weight: 700; display: block; }
-  .stat .label { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-  /* ---------- ROTATING BADGE ("Descobre a tua casa de sonho") ---------- */
-  .rotating-badge {
-    position: absolute;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 140px;
-    height: 140px;
-    z-index: 2;
-  }
-  .rotating-badge .ring {
-    position: absolute;
-    inset: 0;
-  }
-  .rotating-badge .base {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* ---------- HERO IMAGE (photo with a subtle corner gradient, no box) ---------- */
-  .hero-image {
+    min-height: 80vh;
     position: relative;
+  }
+
+  .hero-content {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 80px 40px 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    color: var(--grey);
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 420px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .btn-outline {
+    border: 1px solid #333;
+    background: rgba(255,255,255,0.04);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .stats-container { display: flex; gap: 16px; }
+
+  .stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 16px 22px;
+    min-width: 110px;
+  }
+  .stat .num { font-size: 26px; font-weight: 700; display: block; color: var(--white); }
+  .stat .label { font-size: 12px; color: var(--grey); }
+
+  /* ---------- RIGHT VISUAL COLUMN ---------- */
+  .hero-visual {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 60% at 75% 40%, rgba(232,178,90,0.30), transparent 65%),
+      linear-gradient(160deg, #211a10 0%, #17130c 45%, #0d0d0d 100%);
     display: flex;
     align-items: flex-end;
     justify-content: center;
   }
 
-  .hero-image img.casa {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 25px 30px rgba(0,0,0,0.45));
-  }
-
-  /* subtle diagonal gold glow starting bottom-left of the photo, fading out by ~49% - matches Figma stops (A68040 45% -> transparent) */
-  .hero-image::after {
-    content: "";
+  .hero-visual .texture {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top right, rgba(166,128,64,0.45) 6%, rgba(25,25,25,0) 49%);
-    mix-blend-mode: soft-light;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    opacity: 0.25;
+    mix-blend-mode: screen;
     pointer-events: none;
   }
 
-  /* ---------- SERVICE CARDS ---------- */
-  .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 60px; }
-  .service-card { background: var(--dark-2); border-radius: 16px; padding: 30px 24px; display: flex; flex-direction: column; gap: 16px; position: relative; }
-  .service-card img.icon { width: 50px; height: 50px; border-radius: 50%; }
-  .service-card .title { font-size: 15px; font-weight: 600; }
-  .service-card .arrow { position: absolute; top: 24px; right: 24px; opacity: 0.5; font-size: 16px; }
+  .hero-visual img.casa {
+    position: relative;
+    z-index: 1;
+    max-height: 85%;
+    width: auto;
+    margin-bottom: 0;
+    filter: drop-shadow(0 25px 30px rgba(0,0,0,0.5));
+  }
+
+  /* ---------- FLOATING CIRCLE ON THE BOUNDARY ---------- */
+  .floating-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    z-index: 5;
+  }
+  .floating-circle svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* ---------- SERVICES GRID ---------- */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 60px 80px;
+  }
+
+  .service-card {
+    background: var(--black-2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+
+  .service-card img.icon { width: 50px; height: 50px; }
+
+  .service-card .title {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .service-card .arrow {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: var(--grey-light);
+    font-size: 16px;
+  }
 
   @media (max-width: 900px) {
     header { padding: 16px 24px; flex-wrap: wrap; gap: 16px; }
-    nav ul { gap: 20px; flex-wrap: wrap; }
-    .hero { padding: 24px 24px 50px; }
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-stats { flex-wrap: wrap; }
-    .services { grid-template-columns: repeat(2, 1fr); }
-    .rotating-badge { display: none; }
+    .container { padding: 0 24px; }
+    nav ul { gap: 4px; flex-wrap: wrap; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-content { padding: 32px 24px; }
+    .hero-visual { min-height: 400px; padding: 24px; }
+    .services { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
+    .floating-circle { display: none; }
   }
 </style>
 </head>
@@ -159,7 +241,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="sobre-nos.html">Sobre nós</a></li>
         <li><a href="#projetos">Casas modulares</a></li>
         <li><a href="servicos.html">Processo</a></li>
@@ -169,42 +251,42 @@
   </header>
 
   <section class="hero">
-    <img src="Abstract_Design.svg" class="abstract-bg" alt="">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>A sua casa pensada de raiz</h1>
-        <p>Descubra a nossa abordagem inovadora e personalizada para construções modulares.</p>
-        <div class="hero-ctas">
-          <a href="#orcamento" class="btn-outline">Pedir Orçamento</a>
-          <a href="contacto.html" class="btn-primary">Agendar visita</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="num">25+</span><span class="label">Casas Entregues</span></div>
-          <div class="stat"><span class="num">5 anos</span><span class="label">de mercado</span></div>
-          <div class="stat"><span class="num">2</span><span class="label">Empresas</span></div>
-        </div>
 
-        <a href="#projetos" class="rotating-badge">
-          <svg class="ring" viewBox="0 0 175 175">
-            <defs>
-              <path id="circlePath" d="M 87.5,87.5 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0" />
-            </defs>
-            <circle cx="87.5" cy="87.5" r="86" fill="#141414" stroke="#262626" stroke-width="1.5" />
-            <text fill="#ffffff" font-size="11" letter-spacing="2" font-weight="600">
-              <textPath href="#circlePath" startOffset="0%">
-                DESCOBRE A TUA CASA DE SONHO • DESCOBRE A TUA CASA DE SONHO •
-              </textPath>
-            </text>
-          </svg>
-          <svg class="base" viewBox="0 0 175 175">
-            <circle cx="87.5" cy="87.5" r="39" fill="#1A1A1A" stroke="#262626" stroke-width="1.5" />
-            <path d="M76.875 97.625L98.125 76.375M98.125 92.3125V76.375L82.1875 76.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+    <div class="hero-content">
+      <h1>A sua casa pensada de raiz</h1>
+      <p>Descubra a nossa abordagem inovadora e personalizada para construções modulares.</p>
+
+      <div class="cta-group">
+        <a href="#orcamento" class="btn-outline">Pedir Orçamento</a>
+        <a href="contacto.html" class="btn-primary">Agendar visita</a>
       </div>
-      <div class="hero-image">
-        <img class="casa" src="Casa_hero.png" alt="Casa modular Cria-Forma">
+
+      <div class="stats-container">
+        <div class="stat"><span class="num">25+</span><span class="label">Casas Entregues</span></div>
+        <div class="stat"><span class="num">5 anos</span><span class="label">de mercado</span></div>
+        <div class="stat"><span class="num">2</span><span class="label">Empresas</span></div>
       </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="Abstract_Design.svg" class="texture" alt="">
+      <img class="casa" src="Casa_hero.png" alt="Casa modular Cria-Forma">
+    </div>
+
+    <div class="floating-circle">
+      <svg viewBox="0 0 175 175">
+        <defs>
+          <path id="circlePath" d="M 87.5,87.5 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0" />
+        </defs>
+        <circle cx="87.5" cy="87.5" r="86" fill="#141414" stroke="#262626" stroke-width="1.5" />
+        <text fill="#ffffff" font-size="11" letter-spacing="2" font-weight="600">
+          <textPath href="#circlePath" startOffset="0%">
+            DESCOBRE A TUA CASA DE SONHO • DESCOBRE A TUA CASA DE SONHO •
+          </textPath>
+        </text>
+        <circle cx="87.5" cy="87.5" r="39" fill="#1A1A1A" stroke="#262626" stroke-width="1.5" />
+        <path d="M76.875 97.625L98.125 76.375M98.125 92.3125V76.375L82.1875 76.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </section>
 
