@@ -226,7 +226,167 @@
     .hero-visual { min-height: 400px; padding: 24px; }
     .services { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
     .floating-circle { display: none; }
+    .projects-grid, .testimonials-grid, .faq-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* ---------- SHARED SECTION HEADER ---------- */
+  .section {
+    padding: 60px 80px;
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    gap: 24px;
+  }
+  .section-head h2 { font-size: 30px; font-weight: 600; margin-bottom: 10px; }
+  .section-head p { color: var(--grey); font-size: 14px; max-width: 560px; line-height: 1.5; }
+  .btn-ghost {
+    border: 1px solid #333;
+    background: rgba(255,255,255,0.03);
+    color: var(--white);
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .carousel-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+    color: var(--grey);
+    font-size: 13px;
+  }
+  .carousel-nav button {
+    width: 34px; height: 34px;
+    border: 1px solid #333;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .project-card {
+    background: var(--black-2);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .project-card .thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #2a2a2a;
+    object-fit: cover;
+    display: block;
+  }
+  .project-card .body { padding: 20px; }
+  .project-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .project-card .desc { color: var(--grey); font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+  .project-card .desc a { color: var(--orange); }
+  .project-meta { display: flex; gap: 16px; font-size: 12px; color: var(--grey-light); margin-bottom: 16px; }
+  .btn-view {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--orange);
+    color: var(--white);
+    padding: 12px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--black-2);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 24px;
+  }
+  .stars { color: #F2B33D; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testimonial-card p.quote { font-size: 14px; line-height: 1.6; color: #DDDDDD; margin-bottom: 20px; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-author .avatar { width: 36px; height: 36px; border-radius: 50%; background: #333; }
+  .testimonial-author .name { font-size: 13px; font-weight: 600; }
+  .testimonial-author .year { font-size: 12px; color: var(--grey); }
+
+  /* ---------- FAQ ---------- */
+  .faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .faq-card { background: var(--black-2); border: 1px solid rgba(255,255,255,0.06); padding: 24px; }
+  .faq-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+  .faq-card p { font-size: 13px; color: var(--grey); line-height: 1.6; }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta {
+    margin: 0 80px 60px;
+    background: var(--black-2);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 48px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .final-cta h2 { font-size: 26px; font-weight: 600; margin-bottom: 12px; }
+  .final-cta p { color: var(--grey); font-size: 14px; max-width: 620px; line-height: 1.5; }
+  .final-cta .btn-primary { white-space: nowrap; border-radius: 14px; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 48px 80px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .footer-brand img { height: 36px; margin-bottom: 14px; }
+  .newsletter {
+    display: flex;
+    border: 1px solid #333;
+    max-width: 280px;
+    margin-top: 16px;
+  }
+  .newsletter input {
+    background: transparent;
+    border: none;
+    padding: 12px;
+    color: var(--white);
+    font-size: 13px;
+    flex: 1;
+    outline: none;
+  }
+  .newsletter button {
+    background: var(--orange);
+    border: none;
+    color: var(--white);
+    padding: 0 16px;
+    cursor: pointer;
+  }
+  .footer-cols { display: flex; gap: 60px; flex-wrap: wrap; }
+  .footer-col h5 { font-size: 13px; margin-bottom: 16px; color: var(--white); }
+  .footer-col a { display: block; font-size: 13px; color: var(--grey); margin-bottom: 10px; }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+    color: var(--grey);
+  }
+  .footer-social { display: flex; gap: 16px; }
 </style>
 </head>
 <body>
@@ -280,8 +440,8 @@
         </defs>
         <circle cx="87.5" cy="87.5" r="86" fill="#141414" stroke="#262626" stroke-width="1.5" />
         <text fill="#ffffff" font-size="11" letter-spacing="2" font-weight="600">
-          <textPath href="#circlePath" startOffset="0%">
-            DESCOBRE A TUA CASA DE SONHO • DESCOBRE A TUA CASA DE SONHO •
+          <textPath href="#circlePath" startOffset="10%">
+            DESCOBRE A TUA CASA DE SONHO 
           </textPath>
         </text>
         <circle cx="87.5" cy="87.5" r="39" fill="#1A1A1A" stroke="#262626" stroke-width="1.5" />
@@ -312,6 +472,198 @@
       <div class="title">Entrega da Casa</div>
     </div>
   </section>
+
+  <!-- ---------- PROJETOS ---------- -->
+  <section class="section" id="projetos">
+    <div class="section-head">
+      <div>
+        <h2>Alguns dos nossos projetos</h2>
+        <p>Uma seleção de projetos que demonstra a versatilidade da construção modular e a liberdade de personalização que oferecemos.</p>
+      </div>
+      <a href="#" class="btn-ghost">Ver todos os projetos</a>
+    </div>
+
+    <div class="projects-grid">
+      <img src="alverca_.png" alt="">
+      <div class="project-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <h3>Alverca</h3>
+          <p class="desc">A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood... <a href="#">Read More</a></p>
+          <div class="project-meta"><span>3 Quartos</span><span>3 WCS</span><span>2 pisos</span></div>
+          <a href="#" class="btn-view">Ver projeto</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <h3>Cascais</h3>
+          <p class="desc">A chic and fully-furnished 2-bedroom apartment with panoramic city views... <a href="#">Read More</a></p>
+          <div class="project-meta"><span>3 Quartos</span><span>2 WCS</span><span>2 pisos</span></div>
+          <a href="#" class="btn-view">Ver projeto</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <h3>Sesimbra</h3>
+          <p class="desc">An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community... <a href="#">Read More</a></p>
+          <div class="project-meta"><span>4 Quartos</span><span>3 WCS</span><span>1 piso</span></div>
+          <a href="#" class="btn-view">Ver projeto</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <span>01 of 60</span>
+      <button aria-label="Anterior">←</button>
+      <button aria-label="Seguinte">→</button>
+    </div>
+  </section>
+
+  <!-- ---------- TESTEMUNHOS ---------- -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>O que os nossos clientes dizem</h2>
+        <p>Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Cria-Forma for their real estate needs.</p>
+      </div>
+      <a href="#" class="btn-ghost">Ver todos os testemunhos</a>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Empresa muito comprometida excelente acompanhamento em todo o processo muito o trabalho efetuado e em termo de timings cumprem aconselho a empresa por serem de confiança e responsabilidade</p>
+        <div class="testimonial-author">
+          <div class="avatar"></div>
+          <div><div class="name">Jorge D.</div><div class="year">2025</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Acho que devem optar [pela Cria Forma], é uma boa opção, são bons profissionais.</p>
+        <div class="testimonial-author">
+          <div class="avatar"></div>
+          <div><div class="name">Mário M.</div><div class="year">2023</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Está sensacional. Ele é muito detalhista, então o trabalho é 5 estrelas. Só tenho elogios</p>
+        <div class="testimonial-author">
+          <div class="avatar"></div>
+          <div><div class="name">Armando P.</div><div class="year">2026</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <span>01 of 02</span>
+      <button aria-label="Anterior">←</button>
+      <button aria-label="Seguinte">→</button>
+    </div>
+  </section>
+
+  <!-- ---------- FAQ ---------- -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>FQA'S</h2>
+        <p>Reunimos algumas das dúvidas mais frequentes para que possa compreender melhor como funciona o processo de construção modular.</p>
+      </div>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h4>Posso personalizar totalmente a minha casa?</h4>
+        <p>Sim. Cada projeto é desenvolvido de acordo com as necessidades do cliente, as características do terreno e a legislação em vigor. O objetivo é criar uma solução personalizada e adaptada à forma como pretende viver.</p>
+      </div>
+      <div class="faq-card">
+        <h4>Ainda não tenho terreno. Posso pedir um orçamento?</h4>
+        <p>Sim. Podemos ajudá-lo a compreender o processo e esclarecer as suas dúvidas desde o início. Caso esteja à procura de terreno ou tenha opções em vista, a nossa equipa poderá orientá-lo sobre os aspetos a considerar antes de avançar.</p>
+      </div>
+      <div class="faq-card">
+        <h4>Como funciona o processo?</h4>
+        <p>O processo começa com uma reunião para compreender as suas necessidades. Segue-se o desenvolvimento do projeto de arquitetura, licenciamento, produção da estrutura e construção da habitação, acompanhando-o até à entrega da sua casa.</p>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <span>01 of 03</span>
+      <button aria-label="Anterior">←</button>
+      <button aria-label="Seguinte">→</button>
+    </div>
+  </section>
+
+  <!-- ---------- CTA FINAL ---------- -->
+  <div class="final-cta">
+    <div>
+      <h2>Dê o próximo passo até à sua casa de sonho.</h2>
+      <p>Cada casa começa por uma ideia. Nós ajudamo-lo a transformá-la num projeto pensado para si, para o seu terreno e para a forma como pretende viver.</p>
+    </div>
+    <a href="contacto.html" class="btn-primary">Fale connosco</a>
+  </div>
+
+  <!-- ---------- FOOTER ---------- -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="Cria_forma_2026_Vertical_branco.svg" alt="Cria-Forma">
+        <div class="newsletter">
+          <input type="email" placeholder="Enter Your Email">
+          <button aria-label="Subscrever">➤</button>
+        </div>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Home</h5>
+          <a href="#">Hero Section</a>
+          <a href="#">Features</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#">Testemunhos</a>
+          <a href="#">FAQs</a>
+        </div>
+        <div class="footer-col">
+          <h5>About Us</h5>
+          <a href="sobre-nos.html">A nossa história</a>
+          <a href="#">O nosso trabalho</a>
+          <a href="#">Como funciona</a>
+          <a href="#">A equipa</a>
+          <a href="#">Our Clients</a>
+        </div>
+        <div class="footer-col">
+          <h5>Properties</h5>
+          <a href="#">Portfolio</a>
+          <a href="#">Categories</a>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#">Valuation Mastery</a>
+          <a href="#">Strategic Marketing</a>
+          <a href="#">Negotiation Wizardry</a>
+          <a href="#">Closing Success</a>
+          <a href="#">Property Management</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <a href="contacto.html">Contact Form</a>
+          <a href="#">Our Offices</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>©2026 Cria-Forma. All Rights Reserved. Terms &amp; Conditions</span>
+      <div class="footer-social">
+        <a href="#">FB</a>
+        <a href="#">IG</a>
+        <a href="#">X</a>
+        <a href="#">YT</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
